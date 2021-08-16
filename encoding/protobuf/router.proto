@@ -1,0 +1,26 @@
+
+syntax = "proto3";
+
+package inventory;
+
+service gIMI {
+  rpc GetByASN (GetByASNRequest) returns (User);
+  rpc GetByHostname (GetByHostnameRequest) returns (User);
+  rpc GetAll (GetAllRequest) returns (stream User);
+}
+
+message GetByASNRequest {
+  uint32 asn = 1;
+}
+
+message GetByHostnameRequest {
+  string hostname = 1;
+}
+
+message GetAllRequest {}
+
+message User {
+  string hostname = 1;
+  string ip = 2;
+  uint32 asn = 3;
+}

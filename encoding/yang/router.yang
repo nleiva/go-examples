@@ -1,0 +1,18 @@
+module inventory {
+    yang-version 1;
+    namespace "http://nleiva.com/go/example";
+    prefix "inv";
+
+    container user {
+        leaf hostname {
+            type string;
+        }
+        leaf ip {
+            type string;
+        }
+        leaf asn {
+            type uint16;
+        }
+
+    }
+}
