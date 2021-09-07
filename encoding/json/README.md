@@ -30,11 +30,9 @@ func main() {
 		panic(err)
 	}
 	defer file.Close()
-
-	var inv Inventory
-
 	src := json.NewDecoder(file)
 
+	var inv Inventory
 	err = src.Decode(&inv)
 	if err != nil {
 		panic(err)

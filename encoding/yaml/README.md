@@ -23,11 +23,9 @@ func main() {
 		panic(err)
 	}
 	defer file.Close()
-
-	var inv Inventory
-
 	src := yaml.NewDecoder(file)
-
+	
+	var inv Inventory
 	err = src.Decode(&inv)
 	if err != nil {
 		panic(err)

@@ -23,10 +23,9 @@ func main() {
 		panic(err)
 	}
 	defer file.Close()
+	src := json.NewDecoder(file)
 
 	var inv Inventory
-
-	src := json.NewDecoder(file)
 	// Decode reads the next JSON-encoded value from its
 	// input and stores it in the value pointed to by v.
 	err = src.Decode(&inv)
